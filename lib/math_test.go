@@ -4,7 +4,7 @@ import (
     "fmt"
     "testing"
 
-    "github.com/mario21ic/go-calc/lib"
+    "github.com/mario21ic/go-calc-earthly/lib"
 )
 
 func TestSumar(t *testing.T) {

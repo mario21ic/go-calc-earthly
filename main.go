@@ -3,7 +3,7 @@ package main
 import (
     "fmt"
 
-    "github.com/mario21ic/go-calc/lib"
+    "github.com/mario21ic/go-calc-earthly/lib"
 )
 
 func Cuadrado(x int) int {
