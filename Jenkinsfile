@@ -27,13 +27,13 @@ pipeline {
 
     stage("Lint") {
       steps {
-        sh "earhtly +lint"
+        sh "earthly +lint"
       }
     }
 
     stage("Tests") {
       steps {
-        sh "earhtly +tests"
+        sh "earthly +tests"
       }
     }
 
