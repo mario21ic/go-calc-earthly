@@ -1,6 +1,7 @@
 VERSION 0.6
 
 FROM golang:1.17-alpine
+# No requiere make ni bash
 RUN apk --update --no-cache add git
 WORKDIR /app
 
@@ -51,13 +52,13 @@ docker:
     BUILD +build # save file
     COPY +build/go-calc /go-example/go-calc
     ENTRYPOINT ["/go-example/go-calc"]
-    SAVE IMAGE mario21ic/go-calc:$tag
-    #SAVE IMAGE --push mario21ic/go-calc:$tag
+    SAVE IMAGE mario21ic/go-calc-earthly:$tag
+    #SAVE IMAGE --push mario21ic-earthly/go-calc:$tag
 
 # Example of docker in docker
 test-docker:
     FROM earthly/dind:alpine
-    WITH DOCKER --load mario21ic/go-calc:latest=+docker
-        RUN docker run mario21ic/go-calc:latest
+    WITH DOCKER --load mario21ic/go-calc-earthly:latest=+docker
+        RUN docker run mario21ic/go-calc-earthly:latest
     END
 
