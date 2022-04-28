@@ -60,3 +60,14 @@ earthly -P +hello
 earthly -P +hello # cache en accion
 earthly -P --no-cache +hello
 ```
+
+## CI tools examples:
+Jenkins:
+```
+cat Jenkinsfile
+```
+
+Github actions:
+```
+cat .github/workflows/ci.yaml
+```
