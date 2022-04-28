@@ -74,7 +74,8 @@ jobs:
         run: earthly --version
 
       - name: Build
-        run: earthly --ci +build
+        #run: earthly --ci +build # TODO fix why save local is disabled
+        run: earthly +build
       - run: ls -la ./build
 
       - uses: actions/upload-artifact@v2
