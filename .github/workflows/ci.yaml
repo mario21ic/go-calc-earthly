@@ -29,3 +29,9 @@ jobs:
         run: earthly --version
       - name: Targets
         run: earthly ls
+      - name: Lint
+        run: earthly +lint
+      - name: Tests
+        run: earthly +tests
+      - name: Build
+        run: earthly +build
