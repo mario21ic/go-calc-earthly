@@ -15,18 +15,14 @@ jobs:
         run: date
       - run: hostname
       - run: id
-      - run: ls -la
 
-  checkout:
+  build:
     runs-on: ubuntu-18.04 
     steps:
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0
-
-  targets:
-    runs-on: ubuntu-18.04 
-    steps:
+      - run: ls -la
       - name: Download latest earthly
         run: "sudo /bin/sh -c 'wget https://github.com/earthly/earthly/releases/download/v0.6.14/earthly-linux-amd64 -O /usr/local/bin/earthly && chmod +x /usr/local/bin/earthly'"
       - name: Earthly version
