@@ -33,7 +33,7 @@ Docker:
 ```
 earthly +docker
 earthly +docker --tag="nuevo"
-earthly --push +docker
+earthly --push +docker # para enviar al docker hub
 ```
 
 Run all:

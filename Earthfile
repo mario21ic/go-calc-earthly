@@ -61,8 +61,8 @@ docker:
     # Copiamos /go-calc desde el target build
     COPY +build/go-calc /go-example/go-calc
     ENTRYPOINT ["/go-example/go-calc"]
-    SAVE IMAGE mario21ic/go-calc-earthly:$tag
-    #SAVE IMAGE --push mario21ic-earthly/go-calc:$tag # para enviar al docker hub
+    #SAVE IMAGE mario21ic/go-calc-earthly:$tag
+    SAVE IMAGE --push mario21ic-earthly/go-calc:$tag # para enviar al docker hub
 
 # Example of docker in docker
 test-docker:
