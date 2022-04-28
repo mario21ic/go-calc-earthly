@@ -33,10 +33,6 @@ jobs:
         with:
           fetch-depth: 0
 
-      #- name: Download latest earthly
-      #  run: "sudo /bin/sh -c 'wget -q https://github.com/earthly/earthly/releases/download/v0.6.14/earthly-linux-amd64 -O /usr/local/bin/earthly && chmod +x /usr/local/bin/earthly'"
-      #- name: Earthly version
-      #  run: earthly --version
       - name: Install earthly
         uses: earthly/actions-setup@v1
         with:
@@ -106,11 +102,11 @@ jobs:
         with:
           version: "latest" # or pin to an specific version, e.g. "v0.6.10"
 
-      - name: Docker Login
-        run: docker login --username "$DOCKERHUB_USERNAME" --password "$DOCKERHUB_TOKEN"
 
       - name: Docker
         run: earthly --ci +docker --tag="ghactions"
 
+      #- name: Docker Login
+      #  run: docker login --username "$DOCKERHUB_USERNAME" --password "$DOCKERHUB_TOKEN"
       #- name: Upload
       #  run: earthly --ci --push +docker --tag="ghactions"
